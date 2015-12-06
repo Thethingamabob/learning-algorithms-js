@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Hopfield Network</title>
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+  </head>
+
+  <body>
+    <div class="row">
+    	<div class="col s12">
+    		<h1>Hopfield Single Layer Associative Network</h1>
+    		<p>Define a sample Hopfield network with a test value to demonstrate it.</p>
+    	</div>
+    </div>
+	
+	<div class="input-field col s1">
+    		<input placeholder="5" id="epochs" type="number" min="1" max="1000" step="1">
+    		<label for="epochs" class="tooltipped" data-position="right" data-delay="50" data-tooltip="An epoch is a single pass of weight training with a set of inputs. Only integers from 1 to 1000 are valid for this field in this particular web app, since you'd probably prefer that it didn't crash.">Epochs</label>
+    </div>
+	
+	<div id="testname">
+	</div>
+	
+		<div class="input-field col s1">
+    		<button id="learnButton" class="btn waves-effect waves-light tooltipped" data-position="right" data-delay="50" data-tooltip="Run the learning algorithm!">
+    			<i class="material-icons right">send</i>
+    		</button>
+			<button id="learnButton2" class="btn waves-effect waves-light tooltipped" data-position="right" data-delay="50" data-tooltip="Run the learning algorithm!">
+    			<i class="material-icons right">send2</i>
+    		</button>
+			
+			    <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5"></label>
+    </p>
+		</div>
+
+
+
+    <!-- Vendor JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.3.1/jquery.floatThead.min.js"></script>
+
+    <!-- Project JS -->
+    <script src="functions.js"></script>
+    <script src="hopfield.js"></script>
+  </body>
+</html>

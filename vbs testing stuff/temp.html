@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      var arrayToModify = [];
+      window.onload = function () {
+        var i, buttonsToCreate, buttonContainer, newButton;
+        buttonsToCreate = ['button1','button2','button3','button4','button5'];
+        buttonContainer = document.getElementById('this_element_contains_my_buttons');
+        for (i = 0; i < buttonsToCreate.length; i++) {
+          newButton = document.createElement('input');
+          newButton.type = 'button';
+          newButton.value = buttonsToCreate[i];
+          newButton.id = buttonsToCreate[i];
+          newButton.onclick = function () {
+            alert('You pressed '+this.id);
+            arrayToModify[arrayToModify.length] = this.id;
+          };
+          buttonContainer.appendChild(newButton);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id='this_element_contains_my_buttons'></div>
+    <input type='button' onclick='alert(arrayToModify);' value='Show the buttons I have clicked' />
+  </body>
+</html>

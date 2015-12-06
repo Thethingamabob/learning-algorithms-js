@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Hopfield Network Demo</title>
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+  </head>
+
+  <body>
+    <div class="row">
+    	<div class="col s12">
+    		<h1>Hopfield Single-Layer Network</h1>
+    		<p>Create a simple Hopfield Network, and observe it associate a test value with a remembered state.</p>
+    	</div>
+    </div>
+	
+	<!--Row of buttons - Neuron Count, State Count, Epochs.-->
+	<div class="row">
+		<div class="input-field col s3">
+    		<input value="3" id="numberNeurons" type="number" min="2" max="30" step="1">
+    		<label for="numberNeurons" class="tooltipped" data-position="below" data-delay="50" data-tooltip="TODO: Type description here.">Number of Neurons</label>
+    	</div>
+
+    	<div class="input-field col s3">
+    		<input value="2" id="numberStates" type="number" min="1" max="30">
+    		<label for="numberStates" class="tooltipped" data-position="below" data-delay="50" data-tooltip="TODO: Type description here.">Number of Associated States</label>
+    	</div>	
+		
+		<div class="input-field col s3">
+    		<input value="20" id="numberEpochs" type="number" min="1" max="500">
+    		<label for="numberEpochs" class="tooltipped" data-position="below" data-delay="50" data-tooltip="TODO: Type description here.">Epochs</label>
+    	</div>
+		
+		<div class="input-field col s1">
+    		<button id="goButton" class="btn waves-effect waves-light tooltipped" data-position="below" data-delay="50" data-tooltip="Run the network!">Run!
+    			<i class="material-icons right">send</i>
+    		</button>
+    	</div>
+	</div>
+	
+	<hr>
+	
+	<!--Table for the memory Buttons-->
+	<table border="2" style="width:100%" id="stateBtnArea">
+	<colgroup>
+		<col span="2" width="10">
+	</colgroup>
+	</table>
+	
+	<hr>
+	
+	<!--Table for the test case buttons-->
+	<table border="2" style="width:100%" id="testBtnArea">
+	</table>
+	
+	<hr>
+	<!--Area for the weight matrix should go here.-->
+	
+	
+	
+	
+	<!--Fancy table for each epoch-> make this dynamic width?-->
+	<div class="row">
+    	<div class="col s12">
+    		<table class="striped responsive-table">
+    			<thead style="background-color: #fff;">
+    				<tr>
+    					<th>Epoch \ Neuron # --></th>
+    				</tr>
+    			</thead>
+
+    			<tbody id="tableBody"></tbody>
+    		</table>
+    	</div>
+    </div>
+
+
+
+    <!-- Vendor JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.3.1/jquery.floatThead.min.js"></script>
+
+    <!-- Project JS -->
+    <script src="functions.js"></script>
+    <script src="hopfield.js"></script>
+  </body>
+</html>

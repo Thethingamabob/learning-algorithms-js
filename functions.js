@@ -58,7 +58,7 @@ function createMatrix(rows, cols, id) {
 function multiply(A, B) {
  	var rowsA = A.length, colsA = A[0].length,
 			rowsB = B.length, colsB = B[0].length;
-
+			
 	if (colsA !== rowsB) {
 		console.log("ERROR: Columns of A not equal to rows of B.");
 		return; // Returns undefined.
@@ -71,7 +71,7 @@ function multiply(A, B) {
 
 		for (var j = 0; j < colsB; ++j) {
 			C[i][j] = 0;
-
+					
 			for (var k = 0; k < rowsB; ++k)
 				C[i][j] += A[i][k] * B[k][j];
 		}
@@ -255,3 +255,83 @@ function trainWeight(inputs, weights, threshold, learningRate, error) {
 
 	return newWeights;
 }
+
+/**
+ * Returns a stepified or signified version of input matrix A.
+ * All values become 0 or 1 if step is false, -1 or 1 otherwise.
+ * @param {array} A
+ * @param {boolean} sign
+ */
+function stepify(A, sign){
+	var rows = A.length, cols = A[0].length;
+	
+	var C = [];
+
+	for (var i = 0; i < rowsA; ++i){
+		C.push([]);
+		for (var j = 0; j < colsA; ++j){
+			if(sign){
+				if(A[i][j] < 0)
+					C[i][j] = -1;
+				else
+					C[i][j] = 1;
+			}
+			else{
+				if(A[i][j] <= 0)
+					C[i][j] = 0;
+				else
+					C[i][j] = 1;
+			}
+		}
+	}
+}
+
+
+/**
+ * Returns true if the two arrays are the same, false otherwise.
+ * @param {array} A
+ * @param {array} B
+ */
+function compare(A, B)
+{
+	var rowsA = A.length, colsA = A[0].length,
+		rowsB = B.length, colsB = B[0].length;
+
+	//cannot be the same if they do not have the same # of rows or columns
+	if (colsA !== colsB || rowsA !== rowsB) 
+		return false;
+	
+	for (var i = 0; i < colsA; ++i)
+		for (var j = 0; j < rowsA; ++j)
+			if(A[i][j] != B[i][j])
+				return false;
+			
+	//only true if all of the above are the same
+	return true;
+}
+
+/**
+ * Returns true if the given row and column are within the matrix, false otherwise.
+ * @param {array} A
+ * @param {number} row
+ * @param {number} col
+ */
+function isInside(A, row, col){
+	var rowLength = A.length, colLength = A[0].length;
+	
+	if((row < rowLength) && (col < colLength))
+		return true;
+	else
+		return false;
+}
+
+
+
+
+
+
+
+
+
+
+
