@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Bidirectional Associative Memory (BAM) Demo</title>
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+  </head>
+
+  <body>
+    <div class="row">
+    	<div class="col s12">
+    		<h1>Bidirectional Associative Memory (BAM) Demo</h1>
+    		<p>Draw one of the first five capital, English alphabetical characters (A, B, C, D, E) to test if this algorithm recognizes it.</p>
+        <p>Left click and drag to draw, right click and drag to delete.</p>
+    	</div>
+    </div>
+
+    <div class="row">
+    	<div style="text-align: center; border-right: 1px dashed #000;" class="col s6">
+    		<h2>Your drawing:</h1>
+    		<canvas style="border: 3px solid #000; margin-bottom: 30px;" id="drawing" width="500" height="500"></canvas>
+    	</div>
+
+      <div style="text-align: center;" class="col s6">
+    		<h2>What BAM thinks:</h1>
+    		<canvas style="border: 3px solid #000;" id="bam" width="500" height="500"></canvas>
+    	</div>
+    </div>
+
+    <!-- Vendor JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+    <!-- Project JS -->
+    <script src="functions.js"></script>
+    <script src="bam.js"></script>
+  </body>
+</html>
